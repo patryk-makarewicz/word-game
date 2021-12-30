@@ -1,4 +1,4 @@
-export const game = [
+export const gameData = [
   {
     question: 'select animals',
     all_words: [

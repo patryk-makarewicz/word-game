@@ -9,12 +9,21 @@
   margin-right: auto;
 
   &__box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     border: 0.1rem solid $color-gray-light;
     padding: 4rem 3rem;
     border-radius: 0.8rem;
     width: 100%;
     height: 30rem;
     margin: 0 auto 3rem auto;
+  }
+
+  &__boxWord {
+    margin-left: 2rem;
+    margin-right: 5rem;
   }
 
   &__title {
