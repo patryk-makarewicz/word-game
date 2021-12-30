@@ -20,11 +20,15 @@ const Layout = styled.div`
 export interface IContextData {
   nickname: string;
   setNickname: (value: string) => void;
+  languagePl: boolean;
+  changeLanguage: (lng: string) => void;
 }
 
 export const ContextDefaultValue: IContextData = {
   nickname: '',
   setNickname: (value) => value,
+  languagePl: true,
+  changeLanguage: (lng) => lng,
 };
 
 export const AppContext = React.createContext<IContextData>(ContextDefaultValue);
@@ -38,13 +42,12 @@ const App = () => {
   };
 
   const [nickname, setNickname] = useState('');
-  console.log(nickname);
 
   return (
     <>
       <GlobalStyle />
-      <AppContext.Provider value={{ nickname, setNickname }}>
-        <Header changeLanguage={changeLanguage} languagePl={languagePl} />
+      <AppContext.Provider value={{ nickname, setNickname, languagePl, changeLanguage }}>
+        <Header />
         <Layout>
           <Switch>
             <Route exact path="/">

@@ -6,12 +6,7 @@ import Language from './_partials/language';
 import Logo from '../../assets/logo.svg';
 import styles from './header.module.scss';
 
-type ListProps = {
-  languagePl: boolean;
-  changeLanguage: (val: string) => void;
-};
-
-const Header = ({ languagePl, changeLanguage }: ListProps) => (
+const Header = () => (
   <header className={styles.wrapper}>
     <div className={styles.innerWrapper}>
       <div className={styles.header}>
@@ -20,7 +15,7 @@ const Header = ({ languagePl, changeLanguage }: ListProps) => (
         </NavLink>
         <Navigation />
       </div>
-      <Language languagePl={languagePl} changeLanguage={changeLanguage} />
+      <Language />
     </div>
   </header>
 );
