@@ -1,0 +1,33 @@
+@import '../../../theme/variables';
+
+.navigation {
+  list-style: none;
+  display: flex;
+
+  &__item {
+    margin-right: 3rem;
+
+    :hover {
+      color: $color-blue;
+    }
+
+    :last-of-type {
+      margin-right: 1rem;
+    }
+  }
+
+  &__itemLink {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color-black;
+    font-size: $font-size-s;
+    font-weight: $font-semiBold;
+    cursor: pointer;
+
+    &Active {
+      @extend .navigation__itemLink;
+
+      color: $color-blue;
+    }
+  }
+}

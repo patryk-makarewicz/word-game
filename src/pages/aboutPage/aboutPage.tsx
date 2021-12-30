@@ -1,9 +1,7 @@
 import About from '../../components/about/about';
 
-import './aboutPage.scss';
-
 const AboutPage = () => (
-  <div className="container">
+  <div>
     <About />
   </div>
 );

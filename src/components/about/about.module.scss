@@ -16,7 +16,7 @@
     margin-bottom: 3rem;
   }
 
-  &__greeting-image {
+  &__greetingImage {
     width: 8.8rem;
     height: 8.8rem;
     border-radius: 50%;
@@ -25,9 +25,10 @@
     margin-right: 1rem;
   }
 
-  &__greeting-title {
+  &__greetingTitle {
     font-size: $font-size-xl;
     font-weight: $font-semiBold;
+    color: $color-violet;
   }
 
   &__paragraph {
@@ -35,14 +36,14 @@
     line-height: $line-height-l;
     margin-bottom: 2rem;
 
-    &--color {
+    &Color {
       @extend .about__paragraph;
 
       color: $color-violet;
       font-weight: $font-semiBold;
     }
 
-    &--size {
+    &Size {
       @extend .about__paragraph;
 
       font-size: $font-size-m;
@@ -51,13 +52,13 @@
     }
   }
 
-  &__paragraph-icon {
+  &__paragraphIcon {
     width: 2.4rem;
     height: 2.4rem;
     margin-left: 1rem;
   }
 
-  &__paragraph-link {
+  &__paragraphLink {
     transition: ease 0.2s all;
     cursor: pointer;
 

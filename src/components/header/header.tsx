@@ -4,7 +4,7 @@ import Navigation from './_partials/navigation';
 import Language from '../language/language';
 
 import Logo from '../../assets/logo.svg';
-import './header.scss';
+import styles from './header.module.scss';
 
 type ListProps = {
   languagePl: boolean;
@@ -12,11 +12,11 @@ type ListProps = {
 };
 
 const Header = ({ languagePl, changeLanguage }: ListProps) => (
-  <header className="wrapper">
-    <div className="header">
-      <div className="header__navigation">
+  <header className={styles.wrapper}>
+    <div className={styles.innerWrapper}>
+      <div className={styles.header}>
         <NavLink to="/">
-          <img className="header__navigation-logo" src={Logo} alt="Logo" />
+          <img className={styles.header__logo} src={Logo} alt="Logo" />
         </NavLink>
         <Navigation />
       </div>

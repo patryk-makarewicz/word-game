@@ -1,7 +1,7 @@
 import FlagPl from '../../assets/flag_poland.svg';
 import flagEn from '../../assets/flag_en.svg';
 
-import './language.scss';
+import styles from './language.module.scss';
 
 type ListProps = {
   languagePl: boolean;
@@ -10,21 +10,21 @@ type ListProps = {
 
 const Language = ({ languagePl, changeLanguage }: ListProps) => (
   <button
-    className="language"
+    className={styles.language}
     type="button"
     onClick={languagePl ? () => changeLanguage('en') : () => changeLanguage('pl')}
   >
     <img
-      className={languagePl ? 'language__flag' : 'language__flagDisabled'}
+      className={languagePl ? styles.language__flag : styles.language__flagDisabled}
       src={FlagPl}
       alt="Flaga wybranego języka"
     />
     <img
-      className={!languagePl ? 'language__flagEn' : 'language__flagDisabled'}
+      className={!languagePl ? styles.language__flagEn : styles.language__flagDisabled}
       src={flagEn}
       alt="Flaga wybranego języka"
     />
-    <p className="language__paragraph">{languagePl ? 'PL' : 'EN'}</p>
+    <p className={styles.language__paragraph}>{languagePl ? 'PL' : 'EN'}</p>
   </button>
 );
 

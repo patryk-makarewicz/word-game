@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './button.scss';
+import styles from './button.module.scss';
 
 type ButtonProps = {
   to: string;
@@ -7,7 +7,7 @@ type ButtonProps = {
 };
 
 const ButtonLink = ({ children, to }: ButtonProps) => (
-  <Link className="button" to={to}>
+  <Link className={styles.button} to={to}>
     {children}
   </Link>
 );

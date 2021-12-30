@@ -12,48 +12,16 @@
     "paragraph_nine": "makaDev (commercial)"
   },
 
-  "button": "Search",
-
-  "details": {
-    "title": "Your location",
-    "titleSearch": "Searching location",
-    "ip": "IP:",
-    "continent": "Continent:",
-    "country": "Country:",
-    "region": "Region:",
-    "city": "City:"
-  },
-
   "error": "Error - refresh page and try again",
-  "errorLimit": "Upss... my monthly usage limit has been reached. Please try again another time",
 
-  "greeting": {
-    "title": "Location App",
-    "paragraph": "App to searching location from IP or URL.",
+  "landing": {
+    "title": "Word Game",
+    "paragraph": "Game",
     "button": "Get started"
   },
 
-  "history": {
-    "title": "History",
-    "empty": "Empty"
-  },
-
   "navigation": {
-    "search": "search",
+    "start": "start",
     "about": "about me"
-  },
-
-  "search": {
-    "button": "Search",
-    "placeholder": "Enter address IP lub URL"
-  },
-
-  "info": {
-    "text": "The website is in the HTTPS protocol and the request to the ipstack.com API in the free version is HTTP. This generates the „Mixed Content” error.",
-    "stepOne": "To display the page correctly, follow these steps (Chrome browser):",
-    "stepTwo": "=> click on the „padlock” next to the URL",
-    "stepThree": "=> „Site settings”",
-    "stepFour": "=> „Dangerous content” - dropdown the list and click on „Allow”",
-    "stepFive": "=> Refresh the page and click „Get started”"
   }
 }

@@ -1,4 +1,4 @@
-import './button.scss';
+import styles from './button.module.scss';
 
 type ButtonProps = {
   onPress: () => void;
@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 const Button = ({ children, onPress }: ButtonProps) => (
-  <button className="button" type="button" onClick={onPress}>
+  <button className={styles.button} type="button" onClick={onPress}>
     {children}
   </button>
 );

@@ -1,33 +1,31 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import './navigation.scss';
+import styles from './navigation.module.scss';
 
 const Navigation = () => {
   const { t } = useTranslation();
 
   return (
     <nav>
-      <ul className="navigation">
-        <li className="navigation__item">
+      <ul className={styles.navigation}>
+        <li className={styles.navigation__item}>
           <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link--active"
+            className={styles.navigation__itemLink}
+            activeClassName={styles.navigation__itemLinkActive}
             exact
-            to="/search"
+            to="/"
           >
-            {t('navigation.search')}
-            <div className="navigation__item-underline" />
+            {t('navigation.start')}
           </NavLink>
         </li>
-        <li className="navigation__item">
+        <li className={styles.navigation__item}>
           <NavLink
-            className="navigation__item-link"
-            activeClassName="navigation__item-link--active"
+            className={styles.navigation__itemLink}
+            activeClassName={styles.navigation__itemLinkActive}
             to="/about"
           >
             {t('navigation.about')}
-            <div className="navigation__item-underline" />
           </NavLink>
         </li>
       </ul>

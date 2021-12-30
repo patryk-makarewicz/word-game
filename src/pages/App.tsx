@@ -2,12 +2,20 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 import GlobalStyle from '../theme/GlobalStyle';
 import Header from '../components/header/header';
-import GreetingPage from './greeting/greetingPage';
+import LandingPage from './landingPage/landingPage';
 
-const AboutPage = React.lazy(() => import('./about/aboutPage'));
+const AboutPage = React.lazy(() => import('./aboutPage/aboutPage'));
+
+const Layout = styled.div`
+  max-width: 132rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+`;
 
 const App = () => {
   const { i18n } = useTranslation();
@@ -22,14 +30,16 @@ const App = () => {
     <>
       <GlobalStyle />
       <Header changeLanguage={changeLanguage} languagePl={languagePl} />
-      <Switch>
-        <Route exact path="/">
-          <GreetingPage />
-        </Route>
-        <Route path="/about">
-          <AboutPage />
-        </Route>
-      </Switch>
+      <Layout>
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route path="/about">
+            <AboutPage />
+          </Route>
+        </Switch>
+      </Layout>
     </>
   );
 };
