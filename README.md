@@ -5,11 +5,11 @@
 This is word game.
 <br />
 
-<!-- ## Link to website
+## Link to website
 
 To watch click [here]
 
-[here]:  -->
+[here]: https://word-game-makadev.netlify.app
 
 ## What's inside?
 

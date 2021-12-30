@@ -16,7 +16,7 @@ const Greeting = () => {
         autoComplete="off"
         maxLength={30}
       />
-      <ButtonLink to="/search">{t('landing.button')}</ButtonLink>
+      <ButtonLink to="/game">{t('landing.button')}</ButtonLink>
     </div>
   );
 };
