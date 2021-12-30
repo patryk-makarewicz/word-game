@@ -4,10 +4,24 @@
   display: flex;
   align-items: center;
 
-  &__logo {
-    width: 15rem;
-    height: 4rem;
-    margin-right: 4rem;
+  &__link {
+    height: 2rem;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      height: 4rem;
+    }
+  }
+
+  &__linkLogo {
+    width: 8rem;
+    height: 2rem;
+    margin-right: 2rem;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      width: 15rem;
+      height: 4rem;
+      margin-right: 4rem;
+    }
   }
 }
 
@@ -22,7 +36,7 @@
 
 .wrapper {
   width: 100vw;
-  height: 8rem;
+  height: 6rem;
   border: 0.1rem solid $color-gray-light;
   margin: 0 auto 3rem auto;
   background-color: $color-white;

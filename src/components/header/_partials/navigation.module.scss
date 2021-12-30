@@ -5,13 +5,17 @@
   display: flex;
 
   &__item {
-    margin-right: 3rem;
+    margin-right: 2rem;
 
-    :hover {
+    @media screen and (min-width: $breakpoint-sm) {
+      margin-right: 4rem;
+    }
+
+    &:hover {
       color: $color-blue;
     }
 
-    :last-of-type {
+    &:last-of-type {
       margin-right: 1rem;
     }
   }

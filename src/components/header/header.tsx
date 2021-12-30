@@ -15,8 +15,8 @@ const Header = ({ languagePl, changeLanguage }: ListProps) => (
   <header className={styles.wrapper}>
     <div className={styles.innerWrapper}>
       <div className={styles.header}>
-        <NavLink to="/">
-          <img className={styles.header__logo} src={Logo} alt="Logo" />
+        <NavLink className={styles.header__link} to="/">
+          <img className={styles.header__linkLogo} src={Logo} alt="Logo" />
         </NavLink>
         <Navigation />
       </div>
