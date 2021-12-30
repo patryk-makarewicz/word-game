@@ -1,0 +1,27 @@
+@import '../../theme/variables';
+
+.button {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 4rem;
+  background-color: $color-violet;
+  text-decoration: none;
+  color: $color-white;
+  border-radius: 0.8rem;
+  font-size: $font-size-l;
+  font-weight: $font-semiBold;
+  box-shadow: 0rem 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../theme/variables';
+
+.language {
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  border: none;
+  outline-style: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &__flag {
+    width: 4rem;
+    height: 3.2rem;
+  }
+
+  &__flagEn {
+    width: 3.7rem;
+    height: 3.5rem;
+  }
+
+  &__flagDisabled {
+    display: none;
+  }
+
+  &__paragraph {
+    color: $color-black;
+    font-weight: $font-bold;
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+    margin-left: 0.3rem;
+  }
+}

@@ -1,0 +1,57 @@
+//----- Colors -----
+
+$color-black: #242424;
+$color-blue: #1a79d5;
+$color-gray: #707070;
+$color-gray-light: #e1e1e1;
+$color-orange: #eba069;
+$color-red: #dd4747;
+$color-violet: #6b79ef;
+$color-white: #ffffff;
+
+//----- Fonts -----
+
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semiBold: 600;
+$font-bold: 700;
+
+$font-size-s: 1.4rem;
+$font-size-m: 1.6rem;
+$font-size-l: 1.8rem;
+$font-size-xl: 2.1rem;
+$font-size-xll: 3.6rem;
+
+$line-height-s: 1.8rem;
+$line-height-m: 2rem;
+$line-height-l: 2.4rem;
+$line-height-xl: 3rem;
+$line-height-xll: 4rem;
+
+//----- Margins -----
+
+$margin-xs: 1rem;
+$margin-s: 2rem;
+$margin-m: 3rem;
+$margin-l: 5rem;
+$margin-xl: 10rem;
+$margin-xll: 15rem;
+
+//----- Paddings -----
+
+$padding-xs: 1rem;
+$padding-s: 2rem;
+$padding-m: 3rem;
+$padding-l: 5rem;
+$padding-xl: 10rem;
+$padding-xll: 15rem;
+
+//----- Breakpoints -----
+
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xll: 1400px;

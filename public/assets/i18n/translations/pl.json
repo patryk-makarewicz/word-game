@@ -1,0 +1,59 @@
+{
+  "about": {
+    "greeting": "Cześć,",
+    "paragraph_first": "nazywam się Patryk i jestem",
+    "paragraph_second": "Frontend developer | React",
+    "paragraph_third": "Może zainteresuje Cię lista moich",
+    "paragraph_fourth": "umiejętności",
+    "paragraph_fifth": "oraz",
+    "paragraph_sixth": "projektów.",
+    "paragraph_seventh": "GitHub (profil)",
+    "paragraph_eight": "Portfolio (freelancer)",
+    "paragraph_nine": "makaDev (komercyjne)"
+  },
+
+  "button": "Wyszukaj",
+
+  "details": {
+    "title": "Twoja lokalizacja",
+    "titleSearch": "Wyszukana lokalizacja",
+    "ip": "IP:",
+    "continent": "Kontynent:",
+    "country": "Kraj:",
+    "region": "Region:",
+    "city": "Miasto:"
+  },
+
+  "error": "Błąd - odśwież stronę i spróbuj ponownie",
+  "errorLimit": "Upss... mój miesięczny limit użytkowania został osiągnięty. Spróbuj ponownie innym razem.",
+
+  "greeting": {
+    "title": "Location App",
+    "paragraph": "Aplikacja do szukania lokalizacji IP lub URL.",
+    "button": "Rozpocznij"
+  },
+
+  "history": {
+    "title": "Historia",
+    "empty": "Brak wpisów"
+  },
+
+  "navigation": {
+    "search": "szukaj",
+    "about": "o mnie"
+  },
+
+  "search": {
+    "button": "Wyszukaj",
+    "placeholder": "Wpisz adres IP lub URL"
+  },
+
+  "info": {
+    "text": "Strona jest w protokole HTTPS a zapytanie do API ipstack.com w wersji bezpłatnej jest HTTP. Generuje to błąd „Mixed Content”.",
+    "stepOne": "Aby wyświetlić poprawnie strone wykonaj następujące kroki (przeglądarka Chrome):",
+    "stepTwo": "=> kliknij w „kłódkę” obok adresu URL",
+    "stepThree": "=>  „Ustawienia witryn”",
+    "stepFour": "=> „Treść niebezpieczna” - rozwiń listę i kliknij w „Zezwalaj”",
+    "stepFive": "=> Odśwież stronę i kliknij w „Rozpocznij”"
+  }
+}

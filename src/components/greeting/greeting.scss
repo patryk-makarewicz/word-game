@@ -1,0 +1,28 @@
+@import '../../theme/variables';
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 0.1rem solid $color-gray-light;
+  padding: 2rem 3rem;
+  border-radius: 0.8rem;
+  max-width: 30rem;
+  height: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    text-align: center;
+    font-size: $font-size-xl;
+    font-weight: $font-semiBold;
+  }
+
+  &__paragraph {
+    text-align: center;
+    font-size: $font-size-l;
+    line-height: $line-height-l;
+    margin-bottom: 2rem;
+  }
+}
