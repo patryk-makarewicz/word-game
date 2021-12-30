@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -9,12 +8,13 @@ import Header from '../components/header/header';
 import LandingPage from './landingPage/landingPage';
 
 const AboutPage = React.lazy(() => import('./aboutPage/aboutPage'));
+const GamePage = React.lazy(() => import('./gamePage/gamePage'));
 
 const Layout = styled.div`
   max-width: 132rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
+  padding: 0 1rem 1rem;
 `;
 
 export interface IContextData {
@@ -55,6 +55,9 @@ const App = () => {
             </Route>
             <Route path="/about">
               <AboutPage />
+            </Route>
+            <Route path="/game">
+              <GamePage />
             </Route>
           </Switch>
         </Layout>

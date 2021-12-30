@@ -14,15 +14,20 @@
 
   "error": "Błąd - odśwież stronę i spróbuj ponownie",
 
-  "landing": {
-    "title": "Word Game",
-    "error": "Min 3 litery",
-    "placeholder": "Wpisz swój nick...",
-    "button": "Rozpocznij"
+  "game": {
+    "title": "Zaznacz",
+    "button": "Sprawdź"
   },
 
   "navigation": {
     "start": "start",
     "about": "o mnie"
+  },
+
+  "landing": {
+    "title": "Word Game",
+    "error": "Min 3 litery",
+    "placeholder": "Wpisz swój nick...",
+    "button": "Rozpocznij"
   }
 }
