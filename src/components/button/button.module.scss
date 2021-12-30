@@ -24,4 +24,11 @@
   &:active {
     box-shadow: none;
   }
+
+  &Secondary {
+    @extend .button;
+
+    box-shadow: none;
+    cursor: not-allowed;
+  }
 }

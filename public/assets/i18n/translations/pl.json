@@ -16,6 +16,7 @@
 
   "landing": {
     "title": "Word Game",
+    "error": "Min 3 litery",
     "placeholder": "Wpisz swój nick...",
     "button": "Rozpocznij"
   },

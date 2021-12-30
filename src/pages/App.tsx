@@ -17,29 +17,45 @@ const Layout = styled.div`
   padding: 1rem;
 `;
 
+export interface IContextData {
+  nickname: string;
+  setNickname: (value: string) => void;
+}
+
+export const ContextDefaultValue: IContextData = {
+  nickname: '',
+  setNickname: (value) => value,
+};
+
+export const AppContext = React.createContext<IContextData>(ContextDefaultValue);
+
 const App = () => {
   const { i18n } = useTranslation();
-
   const [languagePl, setLanguagePl] = useState(true);
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setLanguagePl(!languagePl);
   };
 
+  const [nickname, setNickname] = useState('');
+  console.log(nickname);
+
   return (
     <>
       <GlobalStyle />
-      <Header changeLanguage={changeLanguage} languagePl={languagePl} />
-      <Layout>
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route path="/about">
-            <AboutPage />
-          </Route>
-        </Switch>
-      </Layout>
+      <AppContext.Provider value={{ nickname, setNickname }}>
+        <Header changeLanguage={changeLanguage} languagePl={languagePl} />
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route path="/about">
+              <AboutPage />
+            </Route>
+          </Switch>
+        </Layout>
+      </AppContext.Provider>
     </>
   );
 };

@@ -13,6 +13,19 @@
   margin-left: auto;
   margin-right: auto;
 
+  &__box {
+    position: relative;
+  }
+
+  &__error {
+    color: $color-violet;
+    font-weight: $font-medium;
+    font-size: $font-size-s;
+    position: absolute;
+    top: -2rem;
+    left: 0;
+  }
+
   &__input {
     width: 24rem;
     height: 4rem;
