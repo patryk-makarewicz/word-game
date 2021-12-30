@@ -1,5 +1,5 @@
-import FlagPl from '../../assets/flag_poland.svg';
-import flagEn from '../../assets/flag_en.svg';
+import FlagPl from '../../../assets/flag_poland.svg';
+import flagEn from '../../../assets/flag_en.svg';
 
 import styles from './language.module.scss';
 

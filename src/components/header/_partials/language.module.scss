@@ -1,4 +1,4 @@
-@import '../../theme/variables';
+@import '../../../theme/variables';
 
 .language {
   display: flex;
@@ -9,7 +9,7 @@
   cursor: pointer;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.8;
   }
 
   &__flag {

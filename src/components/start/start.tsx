@@ -9,7 +9,13 @@ const Greeting = () => {
   return (
     <div className={styles.start}>
       <h2 className={styles.start__title}> {t('landing.title')}</h2>
-      <p className={styles.start__paragraph}>{t('landing.paragraph')}</p>
+      <input
+        className={styles.start__input}
+        type="text"
+        placeholder={t('landing.placeholder')}
+        autoComplete="off"
+        maxLength={30}
+      />
       <ButtonLink to="/search">{t('landing.button')}</ButtonLink>
     </div>
   );

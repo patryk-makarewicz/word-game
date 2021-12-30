@@ -16,7 +16,7 @@
 
   "landing": {
     "title": "Word Game",
-    "paragraph": "Game",
+    "placeholder": "Enter your nickname...",
     "button": "Get started"
   },
 

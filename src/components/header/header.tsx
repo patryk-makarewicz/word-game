@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import Navigation from './_partials/navigation';
-import Language from '../language/language';
+import Language from './_partials/language';
 
 import Logo from '../../assets/logo.svg';
 import styles from './header.module.scss';
