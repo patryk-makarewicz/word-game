@@ -26,6 +26,12 @@
     margin-right: 5rem;
   }
 
+  &__boxWordChecked {
+    margin-left: 2rem;
+    margin-right: 5rem;
+    color: $color-orange;
+  }
+
   &__title {
     text-align: center;
     font-size: $font-size-xl;
