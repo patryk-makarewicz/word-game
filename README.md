@@ -2,7 +2,7 @@
 
 # General info
 
-This is word game.
+This is word game [In construction].
 <br />
 
 ## Link to website
