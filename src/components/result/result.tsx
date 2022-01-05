@@ -7,7 +7,7 @@ import styles from './result.module.scss';
 
 const Result = () => {
   const { t } = useTranslation();
-  const { nickname } = useContext(AppContext);
+  const { nickname, points } = useContext(AppContext);
 
   return (
     <div className={styles.result}>
@@ -15,7 +15,9 @@ const Result = () => {
         {t('result.congrats')}, {nickname}!
       </h2>
       <p className={styles.result__score}>{t('result.score')}:</p>
-      <p className={styles.result__scoreBlue}>{t('result.points')}</p>
+      <p className={styles.result__scoreBlue}>
+        {points} {points === 1 || points === -1 ? t('result.point') : t('result.points')}
+      </p>
       <ButtonLink to="/">{t('result.button')}</ButtonLink>
     </div>
   );

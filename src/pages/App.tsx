@@ -23,6 +23,8 @@ export interface IContextData {
   setNickname: (value: string) => void;
   languagePl: boolean;
   changeLanguage: (lng: string) => void;
+  points: number;
+  setPoints: (value: number) => void;
 }
 
 export const ContextDefaultValue: IContextData = {
@@ -30,6 +32,8 @@ export const ContextDefaultValue: IContextData = {
   setNickname: (value) => value,
   languagePl: true,
   changeLanguage: (lng) => lng,
+  points: 0,
+  setPoints: (value) => value,
 };
 
 export const AppContext = React.createContext<IContextData>(ContextDefaultValue);
@@ -43,11 +47,14 @@ const App = () => {
   };
 
   const [nickname, setNickname] = useState('');
+  const [points, setPoints] = useState(0);
 
   return (
     <>
       <GlobalStyle />
-      <AppContext.Provider value={{ nickname, setNickname, languagePl, changeLanguage }}>
+      <AppContext.Provider
+        value={{ nickname, setNickname, languagePl, changeLanguage, points, setPoints }}
+      >
         <Header />
         <Layout>
           <Switch>

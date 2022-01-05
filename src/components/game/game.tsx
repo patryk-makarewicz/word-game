@@ -1,8 +1,10 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AppContext } from '../../pages/App';
 import Button from '../button/button';
 import ButtonLink from '../button/buttonLink';
 import { gameData } from '../../helpers/game';
@@ -22,6 +24,7 @@ type IAllWords = {
 
 const Game = () => {
   const { t } = useTranslation();
+  const { points, setPoints } = useContext(AppContext);
 
   const [randomNumber, setRandomNumber] = useState(0);
   const [allData, setAllData] = useState<IAllData>();
@@ -30,6 +33,8 @@ const Game = () => {
   const [check, setCheck] = useState(false);
 
   useEffect(() => {
+    setPoints(0);
+
     const min = 0;
     const max = gameData.length;
     const number = Math.floor(Math.random() * (max - min) + min);
@@ -55,12 +60,20 @@ const Game = () => {
     newWordList[index].checked = !newWordList[index].checked;
     if (allData?.good_words.includes(wordValue)) {
       newWordList[index].isGood = !newWordList[index].isGood;
+      setPoints(points + 2);
+    } else {
+      setPoints(points - 1);
     }
     setWordsList(newWordList);
   };
 
   const toggleCheck = () => {
     setCheck(true);
+    const notCheckedGoodWords = wordsList.filter(
+      (result) => !result.checked && allData?.good_words.includes(result.value),
+    );
+    const numberGoodNotChecked = notCheckedGoodWords.length;
+    setPoints(points - numberGoodNotChecked);
   };
 
   useEffect(() => {}, [wordsList]);
