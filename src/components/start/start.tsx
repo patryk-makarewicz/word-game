@@ -27,7 +27,7 @@ const Start = () => {
           value={nickname}
           placeholder={t('landing.placeholder')}
           autoComplete="off"
-          maxLength={30}
+          maxLength={21}
         />
       </div>
       {nickname.length > 2 ? (

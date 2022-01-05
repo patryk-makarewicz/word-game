@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Button from '../button/button';
+import ButtonLink from '../button/buttonLink';
 import { gameData } from '../../helpers/game';
 import styles from './game.module.scss';
 
@@ -63,14 +64,19 @@ const Game = () => {
   };
 
   useEffect(() => {}, [wordsList]);
-  console.log(wordsList);
 
   return (
     <div className={styles.game}>
       <h2 className={styles.game__title}>{allData?.question}</h2>
       <div className={styles.game__box}>
         {wordsList.map((word: any, index) => (
-          <div key={index}>
+          <div className={styles.game__boxContainer} key={index}>
+            {check && word.checked && !word.isGood && (
+              <p className={styles.game__boxContainerBad}>Bad</p>
+            )}
+            {check && word.checked && word.isGood && (
+              <p className={styles.game__boxContainerGood}>Good</p>
+            )}
             {!check && (
               <p
                 className={word.checked ? styles.game__boxWordChecked : styles.game__boxWord}
@@ -98,7 +104,11 @@ const Game = () => {
           </div>
         ))}
       </div>
-      <Button onClick={toggleCheck}>{t('game.button')}</Button>
+      {!check ? (
+        <Button onClick={toggleCheck}>{t('game.button')}</Button>
+      ) : (
+        <ButtonLink to="/result">{t('game.buttonFinish')}</ButtonLink>
+      )}
     </div>
   );
 };

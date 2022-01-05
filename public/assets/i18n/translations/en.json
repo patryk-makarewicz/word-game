@@ -14,6 +14,18 @@
 
   "error": "Error - refresh page and try again",
 
+  "game": {
+    "button": "Check",
+    "buttonFinish": "Finish",
+    "good": "Good",
+    "bad": "Bad"
+  },
+
+  "navigation": {
+    "start": "start",
+    "about": "about me"
+  },
+
   "landing": {
     "title": "Word Game",
     "error": "Min 3 letters",
@@ -21,8 +33,11 @@
     "button": "Get started"
   },
 
-  "navigation": {
-    "start": "start",
-    "about": "about me"
+  "result": {
+    "congrats": "Congratulations",
+    "score": "Your score",
+    "point": "point",
+    "points": "points",
+    "button": "Back"
   }
 }

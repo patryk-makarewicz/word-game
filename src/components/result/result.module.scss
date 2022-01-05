@@ -1,0 +1,34 @@
+@import '../../theme/variables';
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 0.1rem solid $color-gray-light;
+  padding: 2rem 3rem;
+  border-radius: 0.8rem;
+  max-width: 30rem;
+  height: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__congrats {
+    text-align: center;
+    font-size: $font-size-xl;
+    font-weight: $font-semiBold;
+    overflow-x: hidden;
+  }
+
+  &__score {
+    text-align: center;
+    font-size: $font-size-l;
+    font-weight: $font-medium;
+  }
+
+  &__scoreBlue {
+    @extend .result__score;
+
+    color: $color-blue;
+  }
+}

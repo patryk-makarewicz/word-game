@@ -21,10 +21,32 @@
     margin: 0 auto 3rem auto;
   }
 
+  &__boxContainer {
+    position: relative;
+  }
+
+  &__boxContainerBad {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-red;
+    font-size: $font-size-s;
+  }
+
+  &__boxContainerGood {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green;
+    font-size: $font-size-s;
+  }
+
   &__boxWord {
     cursor: pointer;
     margin-left: 2rem;
-    margin-right: 5rem;
+    margin-right: 2rem;
     padding: 0.1rem 0.4rem;
     border-radius: 0.8rem;
     border: 0.1rem solid $color-white;

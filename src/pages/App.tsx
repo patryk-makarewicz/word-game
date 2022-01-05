@@ -9,6 +9,7 @@ import LandingPage from './landingPage/landingPage';
 
 const AboutPage = React.lazy(() => import('./aboutPage/aboutPage'));
 const GamePage = React.lazy(() => import('./gamePage/gamePage'));
+const ResultPage = React.lazy(() => import('./resultPage/resultPage'));
 
 const Layout = styled.div`
   max-width: 132rem;
@@ -58,6 +59,9 @@ const App = () => {
             </Route>
             <Route path="/game">
               <GamePage />
+            </Route>
+            <Route path="/result">
+              <ResultPage />
             </Route>
           </Switch>
         </Layout>

@@ -15,8 +15,10 @@
   "error": "Błąd - odśwież stronę i spróbuj ponownie",
 
   "game": {
-    "title": "Zaznacz",
-    "button": "Sprawdź"
+    "button": "Sprawdź",
+    "buttonFinish": "Zakończ",
+    "good": "Dobrze",
+    "bad": "Źle"
   },
 
   "navigation": {
@@ -29,5 +31,13 @@
     "error": "Min 3 litery",
     "placeholder": "Wpisz swój nick...",
     "button": "Rozpocznij"
+  },
+
+  "result": {
+    "congrats": "Gratulacje",
+    "score": "Twój wynik",
+    "point": "punkt",
+    "points": "punkty",
+    "button": "Powrót"
   }
 }
