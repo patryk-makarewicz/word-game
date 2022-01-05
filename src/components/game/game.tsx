@@ -7,17 +7,26 @@ import Button from '../button/button';
 import { gameData } from '../../helpers/game';
 import styles from './game.module.scss';
 
-interface State {
-  value?: any;
-  checked?: boolean;
-}
+type IAllData = {
+  question: string;
+  all_words: string[];
+  good_words: string[];
+};
+
+type IAllWords = {
+  value: string;
+  checked: boolean;
+  isGood: boolean;
+};
 
 const Game = () => {
   const { t } = useTranslation();
 
   const [randomNumber, setRandomNumber] = useState(0);
-  const [wordsList, setWordsList] = useState<State[]>([]);
+  const [allData, setAllData] = useState<IAllData>();
+  const [wordsList, setWordsList] = useState<IAllWords[]>([]);
   const newWordList = [...wordsList];
+  const [check, setCheck] = useState(false);
 
   useEffect(() => {
     const min = 0;
@@ -26,39 +35,67 @@ const Game = () => {
 
     setRandomNumber(number);
 
-    const fetchWords = gameData[randomNumber].all_words;
-    const data: { value: string; checked: boolean }[] = [];
-    fetchWords.forEach((elem) => {
+    const fetchAllData = gameData[randomNumber];
+    setAllData(fetchAllData);
+
+    const data: IAllWords[] = [];
+    allData?.all_words.forEach((elem) => {
       data.push({
         value: elem,
         checked: false,
+        isGood: false,
       });
     });
     setWordsList(data);
-  }, []);
+  }, [allData]);
 
   const toggleClick = (wordValue: any) => {
     const index = wordsList.findIndex((word) => word.value === wordValue);
     newWordList[index].checked = !newWordList[index].checked;
+    if (allData?.good_words.includes(wordValue)) {
+      newWordList[index].isGood = !newWordList[index].isGood;
+    }
     setWordsList(newWordList);
   };
 
   const toggleCheck = () => {
-    console.log('check');
+    setCheck(true);
   };
+
+  useEffect(() => {}, [wordsList]);
+  console.log(wordsList);
 
   return (
     <div className={styles.game}>
-      <h2 className={styles.game__title}>{t('game.title')} #variable</h2>
+      <h2 className={styles.game__title}>{allData?.question}</h2>
       <div className={styles.game__box}>
         {wordsList.map((word: any, index) => (
-          <p
-            key={index}
-            className={word.checked ? styles.game__boxWordChecked : styles.game__boxWord}
-            onClick={() => toggleClick(word.value)}
-          >
-            {word.value}
-          </p>
+          <div key={index}>
+            {!check && (
+              <p
+                className={word.checked ? styles.game__boxWordChecked : styles.game__boxWord}
+                onClick={() => toggleClick(word.value)}
+              >
+                {word.value}
+              </p>
+            )}
+            {check && !word.isGood && (
+              <p
+                className={word.checked ? styles.game__boxWordCheckedBad : styles.game__boxWord}
+                onClick={() => toggleClick(word.value)}
+              >
+                {word.value}
+              </p>
+            )}
+            {check && word.isGood && (
+              <p
+                className={word.checked ? styles.game__boxWordCheckedGood : styles.game__boxWord}
+                onClick={() => toggleClick(word.value)}
+              >
+                {word.value}
+              </p>
+            )}
+          </div>
         ))}
       </div>
       <Button onClick={toggleCheck}>{t('game.button')}</Button>
