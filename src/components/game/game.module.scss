@@ -44,10 +44,13 @@
   }
 
   &__boxWord {
+    font-size: $font-size-m;
+    background-color: inherit;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
     margin-left: 2rem;
     margin-right: 2rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.8rem;
     border: 0.1rem solid $color-white;
   }

@@ -1,9 +1,6 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { uuid } from 'uuidv4';
 import { AppContext } from '../../pages/App';
 import Button from '../button/button';
 import ButtonLink from '../button/buttonLink';
@@ -17,6 +14,7 @@ type IAllData = {
 };
 
 type IAllWords = {
+  id: string;
   value: string;
   checked: boolean;
   isGood: boolean;
@@ -29,8 +27,9 @@ const Game = () => {
   const [randomNumber, setRandomNumber] = useState(0);
   const [allData, setAllData] = useState<IAllData>();
   const [wordsList, setWordsList] = useState<IAllWords[]>([]);
-  const newWordList = [...wordsList];
   const [check, setCheck] = useState(false);
+
+  const newWordList = [...wordsList];
 
   useEffect(() => {
     setPoints(0);
@@ -38,7 +37,6 @@ const Game = () => {
     const min = 0;
     const max = gameData.length;
     const number = Math.floor(Math.random() * (max - min) + min);
-
     setRandomNumber(number);
 
     const fetchAllData = gameData[randomNumber];
@@ -47,6 +45,7 @@ const Game = () => {
     const data: IAllWords[] = [];
     allData?.all_words.forEach((elem) => {
       data.push({
+        id: uuid(),
         value: elem,
         checked: false,
         isGood: false,
@@ -55,7 +54,7 @@ const Game = () => {
     setWordsList(data);
   }, [allData]);
 
-  const toggleClick = (wordValue: any) => {
+  const toggleAddToChecked = (wordValue: any) => {
     const index = wordsList.findIndex((word) => word.value === wordValue);
     newWordList[index].checked = !newWordList[index].checked;
     if (allData?.good_words.includes(wordValue)) {
@@ -82,8 +81,8 @@ const Game = () => {
     <div className={styles.game}>
       <h2 className={styles.game__title}>{allData?.question}</h2>
       <div className={styles.game__box}>
-        {wordsList.map((word: any, index) => (
-          <div className={styles.game__boxContainer} key={index}>
+        {wordsList.map((word) => (
+          <div className={styles.game__boxContainer} key={word.id}>
             {check && word.checked && !word.isGood && (
               <p className={styles.game__boxContainerBad}>Bad</p>
             )}
@@ -91,28 +90,31 @@ const Game = () => {
               <p className={styles.game__boxContainerGood}>Good</p>
             )}
             {!check && (
-              <p
+              <button
+                type="button"
                 className={word.checked ? styles.game__boxWordChecked : styles.game__boxWord}
-                onClick={() => toggleClick(word.value)}
+                onClick={() => toggleAddToChecked(word.value)}
               >
                 {word.value}
-              </p>
+              </button>
             )}
             {check && !word.isGood && (
-              <p
+              <button
+                type="button"
                 className={word.checked ? styles.game__boxWordCheckedBad : styles.game__boxWord}
-                onClick={() => toggleClick(word.value)}
+                onClick={() => toggleAddToChecked(word.value)}
               >
                 {word.value}
-              </p>
+              </button>
             )}
             {check && word.isGood && (
-              <p
+              <button
+                type="button"
                 className={word.checked ? styles.game__boxWordCheckedGood : styles.game__boxWord}
-                onClick={() => toggleClick(word.value)}
+                onClick={() => toggleAddToChecked(word.value)}
               >
                 {word.value}
-              </p>
+              </button>
             )}
           </div>
         ))}
