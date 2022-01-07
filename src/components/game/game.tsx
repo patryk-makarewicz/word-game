@@ -59,24 +59,30 @@ const Game = () => {
     newWordList[index].checked = !newWordList[index].checked;
     if (allData?.good_words.includes(wordValue)) {
       newWordList[index].isGood = !newWordList[index].isGood;
-      if (newWordList[index].isGood) {
-        setPoints(points + 2);
-      } else {
-        setPoints(points - 2);
-      }
-    } else {
-      setPoints(points - 1);
     }
     setWordsList(newWordList);
   };
 
   const toggleCheck = () => {
     setCheck(true);
+
+    const CheckedBadWords = wordsList.filter(
+      (result) => result.checked && !allData?.good_words.includes(result.value),
+    );
+    const numberBadChecked = CheckedBadWords.length;
+
     const notCheckedGoodWords = wordsList.filter(
       (result) => !result.checked && allData?.good_words.includes(result.value),
     );
     const numberGoodNotChecked = notCheckedGoodWords.length;
-    setPoints(points - numberGoodNotChecked);
+
+    const CheckedGoodWords = wordsList.filter(
+      (result) => result.checked && allData?.good_words.includes(result.value),
+    );
+    const numberGoodChecked = CheckedGoodWords.length;
+    const addForGoodAnswer = numberGoodChecked * 2;
+
+    setPoints(points - numberBadChecked - numberGoodNotChecked + addForGoodAnswer);
   };
 
   useEffect(() => {}, [wordsList]);
