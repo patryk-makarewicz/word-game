@@ -16,7 +16,9 @@ const Result = () => {
       </h2>
       <p className={styles.result__score}>{t('result.score')}:</p>
       <p className={styles.result__scoreBlue}>
-        {points} {points === 1 || points === -1 ? t('result.point') : t('result.points')}
+        {points} {(points === 1 || points === -1) && t('result.point')}{' '}
+        {((points > 1 && points <= 4) || (points < -1 && points >= -4)) && t('result.points')}
+        {(points >= 5 || points <= -5 || points === 0) && t('result.morePoints')}
       </p>
       <ButtonLink to="/">{t('result.button')}</ButtonLink>
     </div>
