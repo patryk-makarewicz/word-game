@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 import { AppContext } from '../../pages/App';
 import Button from '../button/button';
 import ButtonLink from '../button/buttonLink';
@@ -45,7 +45,7 @@ const Game = () => {
     const data: IAllWords[] = [];
     allData?.all_words.forEach((elem) => {
       data.push({
-        id: uuid(),
+        id: uuidv4(),
         value: elem,
         checked: false,
         isGood: false,
