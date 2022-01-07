@@ -59,7 +59,11 @@ const Game = () => {
     newWordList[index].checked = !newWordList[index].checked;
     if (allData?.good_words.includes(wordValue)) {
       newWordList[index].isGood = !newWordList[index].isGood;
-      setPoints(points + 2);
+      if (newWordList[index].isGood) {
+        setPoints(points + 2);
+      } else {
+        setPoints(points - 2);
+      }
     } else {
       setPoints(points - 1);
     }
