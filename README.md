@@ -2,7 +2,7 @@
 
 # General info
 
-This is word game [In construction].
+This is word game.
 <br />
 
 ## Link to website
@@ -14,6 +14,7 @@ To watch click [here]
 ## What's inside?
 
 ✔ React<br />
+✔ Context API<br />
 ✔ TypeScript<br />
 ✔ JavaScript<br />
 ✔ HTML5<br />
