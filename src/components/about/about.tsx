@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
 import Me from '../../assets/me.jpg';
-import ReactIcon from '../../assets/react.png';
 import { ReactComponent as Github } from '../../assets/github.svg';
 import { ReactComponent as MakaDev } from '../../assets/logo_small.svg';
 
@@ -41,28 +40,16 @@ const About = () => {
           title="Link to Github"
         >
           <Github className={styles.about__paragraphIcon} />
-        </a>{' '}
+        </a>
       </p>
       <p className={styles.about__paragraphSize}>
         {t('about.paragraph_eight')} =&gt;
         <a
           className={styles.about__paragraphLink}
-          href="https://patryk-makarewicz.github.io/"
+          href="https://patryk-makarewicz.netlify.app/"
           target="_blank"
           rel="noreferrer"
           title="Link to portfolio"
-        >
-          <img className={styles.about__paragraphIcon} src={ReactIcon} alt="React icon" />
-        </a>{' '}
-      </p>
-      <p className={styles.about__paragraphSize}>
-        {t('about.paragraph_nine')} =&gt;
-        <a
-          className={styles.about__paragraphLink}
-          href="https://makadev.pl/"
-          target="_blank"
-          rel="noreferrer"
-          title="Link to makaDev page"
         >
           <MakaDev className={styles.about__paragraphIcon} />
         </a>
