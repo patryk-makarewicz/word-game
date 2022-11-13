@@ -5,23 +5,13 @@
   align-items: center;
 
   &__link {
-    height: 2rem;
-
-    @media screen and (min-width: $breakpoint-sm) {
-      height: 4rem;
-    }
+    height: 4rem;
   }
 
   &__linkLogo {
-    width: 8rem;
-    height: 2rem;
-    margin-right: 2rem;
-
-    @media screen and (min-width: $breakpoint-sm) {
-      width: 15rem;
-      height: 4rem;
-      margin-right: 4rem;
-    }
+    width: 4rem;
+    height: 4rem;
+    margin-right: 4rem;
   }
 }
 

@@ -54,7 +54,7 @@ const Game = () => {
     setWordsList(data);
   }, [allData]);
 
-  const toggleAddToChecked = (wordValue: any) => {
+  const toggleAddToChecked = (wordValue: string) => {
     const index = wordsList.findIndex((word) => word.value === wordValue);
     newWordList[index].checked = !newWordList[index].checked;
     if (allData?.good_words.includes(wordValue)) {
