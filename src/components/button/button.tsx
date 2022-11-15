@@ -3,21 +3,22 @@ import styles from './button.module.scss';
 type ButtonProps = {
   onClick: () => void;
   children: string;
-  secondary?: boolean;
+  disabled?: boolean;
 };
 
-const Button = ({ children, onClick, secondary }: ButtonProps) => (
+const Button = ({ children, onClick, disabled }: ButtonProps) => (
   <button
-    className={!secondary ? styles.button : styles.buttonSecondary}
+    className={!disabled ? styles.button : styles.buttonDisabled}
     type="button"
     onClick={onClick}
+    disabled={disabled}
   >
     {children}
   </button>
 );
 
 Button.defaultProps = {
-  secondary: false,
+  disabled: false,
 };
 
 export default Button;

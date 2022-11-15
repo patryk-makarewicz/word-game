@@ -78,8 +78,6 @@ const Game = () => {
     setPoints(points - numberBadChecked - numberGoodNotChecked + addForGoodAnswer);
   };
 
-  useEffect(() => {}, [wordsList]);
-
   return (
     <div className={styles.game}>
       <h2 className={styles.game__title}>{singleGame?.question}</h2>
@@ -127,7 +125,9 @@ const Game = () => {
         )}
       </div>
       {!check ? (
-        <Button onClick={toggleCheck}>{t('game.button')}</Button>
+        <Button onClick={toggleCheck} disabled={wordsList.every((item) => item.checked === false)}>
+          {t('game.button')}
+        </Button>
       ) : (
         <ButtonLink to="/result">{t('game.buttonFinish')}</ButtonLink>
       )}

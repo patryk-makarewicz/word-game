@@ -33,9 +33,7 @@ const Start = () => {
       {nickname.length > 2 ? (
         <ButtonLink to="/game">{t('landing.button')}</ButtonLink>
       ) : (
-        <Button secondary onClick={toggleMinNicknameLength}>
-          {t('landing.button')}
-        </Button>
+        <Button onClick={toggleMinNicknameLength}>{t('landing.button')}</Button>
       )}
     </div>
   );
