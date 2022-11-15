@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import { QueryKey, Game } from '../api';
 import { GameModel } from '../api/Game/Game.dto';
 
-export const useRepoList = () => {
+export const useGame = () => {
   const { t } = useTranslation();
   const [initialLoading, setInitialLoading] = useState(true);
 

@@ -1,48 +1,41 @@
 import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
+
 import { AppContext } from '../../pages/App';
+import { useGame } from '../../hooks/useGame';
+
 import Button from '../button/button';
 import ButtonLink from '../button/buttonLink';
-import { gameData } from '../../helpers/game';
+
 import styles from './game.module.scss';
-
-type IAllData = {
-  question: string;
-  all_words: string[];
-  good_words: string[];
-};
-
-type IAllWords = {
-  id: string;
-  value: string;
-  checked: boolean;
-  isGood: boolean;
-};
+import { AllWordsModel, SingleGameModel } from '../../api/Game/Game.model';
 
 const Game = () => {
   const { t } = useTranslation();
   const { points, setPoints } = useContext(AppContext);
 
   const [randomNumber, setRandomNumber] = useState(0);
-  const [allData, setAllData] = useState<IAllData>();
-  const [wordsList, setWordsList] = useState<IAllWords[]>([]);
+  const [allData, setAllData] = useState<SingleGameModel>();
+  const [wordsList, setWordsList] = useState<AllWordsModel>([]);
   const [check, setCheck] = useState(false);
 
   const newWordList = [...wordsList];
+
+  const { data: games } = useGame();
 
   useEffect(() => {
     setPoints(0);
 
     const min = 0;
-    const max = gameData.length;
+    const max = games.length;
     const number = Math.floor(Math.random() * (max - min) + min);
     setRandomNumber(number);
 
-    const fetchAllData = gameData[randomNumber];
+    const fetchAllData = games[randomNumber];
     setAllData(fetchAllData);
 
-    const data: IAllWords[] = [];
+    const data: AllWordsModel = [];
     allData?.all_words.forEach((elem) => {
       data.push({
         id: uuidv4(),
@@ -52,7 +45,7 @@ const Game = () => {
       });
     });
     setWordsList(data);
-  }, [allData]);
+  }, [allData, games]);
 
   const toggleAddToChecked = (wordValue: string) => {
     const index = wordsList.findIndex((word) => word.value === wordValue);
@@ -94,10 +87,10 @@ const Game = () => {
         {wordsList.map((word) => (
           <div className={styles.game__boxContainer} key={word.id}>
             {check && word.checked && !word.isGood && (
-              <p className={styles.game__boxContainerBad}>Bad</p>
+              <p className={styles.game__boxContainerBad}>{t('game.bad')}</p>
             )}
             {check && word.checked && word.isGood && (
-              <p className={styles.game__boxContainerGood}>Good</p>
+              <p className={styles.game__boxContainerGood}>{t('game.good')}</p>
             )}
             {!check && (
               <button
