@@ -1,11 +1,14 @@
 import React, { useEffect, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
+import { QueryClientProvider } from 'react-query';
+
 import styled from 'styled-components';
 import LoaderDots from './helpers/loader';
 import App from './pages/App';
 import './i18n';
 import reportWebVitals from './reportWebVitals';
+import { queryClient } from './api';
 
 const Loading = styled.div`
   position: absolute;
@@ -34,10 +37,12 @@ ReactDOM.render(
     }
   >
     <React.StrictMode>
-      <Router>
-        <ScrollToTop />
-        <App />
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <ScrollToTop />
+          <App />
+        </Router>
+      </QueryClientProvider>
     </React.StrictMode>
   </Suspense>,
   document.getElementById('root'),
