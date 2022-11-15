@@ -40,5 +40,10 @@
     "points": "points",
     "morePoints": "points",
     "button": "Back"
+  },
+
+  "message": {
+    "success": "Download game successfully",
+    "failed": "Failed to download game "
   }
 }

@@ -40,5 +40,10 @@
     "points": "punkty",
     "morePoints": "punktów",
     "button": "Powrót"
+  },
+
+  "message": {
+    "success": "Pobrano grę",
+    "failed": "Nie udało się podrać gry."
   }
 }
