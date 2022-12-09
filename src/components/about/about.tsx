@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Me from '../../assets/me.jpg';
 import { ReactComponent as Github } from '../../assets/github.svg';
 import { ReactComponent as MakaDev } from '../../assets/logo_small.svg';
+import { ReactComponent as LinkedIn } from '../../assets/linkedIn.svg';
 
 import styles from './about.module.scss';
 
@@ -52,6 +53,18 @@ const About = () => {
           title="Link to portfolio"
         >
           <MakaDev className={styles.about__paragraphIcon} />
+        </a>
+      </p>
+      <p className={styles.about__paragraphSize}>
+        {t('about.paragraph_nine')} =&gt;
+        <a
+          className={styles.about__paragraphLink}
+          href="https://www.linkedin.com/in/patryk-makarewicz/"
+          target="_blank"
+          rel="noreferrer"
+          title="Link to LinkedIn"
+        >
+          <LinkedIn className={styles.about__paragraphIcon} />
         </a>
       </p>
     </div>
